@@ -9,22 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Flag Dash").bold()
-                .font(.largeTitle)
-            Text("Press the button to start").foregroundColor(.gray)
+        ZStack {
+            Image("earth-background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .center) {
+                Text("Flag Dash")
+                    .bold()
+                    .font(.largeTitle)
+                Text("Press the button to start").foregroundColor(.gray)
                 }
-                    .padding()
-        
-            Button("Play"){
+                .padding()
                 
-                   
-                
+                Button("Play"){
+                    
+                        }
+                    }
+                }
             }
         
-        
-    }
-}
+    
+
 
 #Preview {
     ContentView()
