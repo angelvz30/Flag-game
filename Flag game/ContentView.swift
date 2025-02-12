@@ -13,22 +13,31 @@ struct ContentView: View {
             Image("earth-background")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .center) {
+            VStack {
                 Text("Flag Dash")
-                    .bold()
                     .font(.largeTitle)
-                Text("Press the button to start").foregroundColor(.gray)
-                }
-                .padding()
-                
-                Button("Play"){
-                    
-                        }
+                    .foregroundColor(.white)
+                    .padding()
+                Spacer()
+                HStack {
+                    ForEach(0..<8, id: \.self) { index in
+                        Image("flag\(index)")
+                            .resizable()
                     }
                 }
-            }
-        
+                }
+
+                }
+                
+                Button("Play"){
+                        }
+                Button("Instructions"){
+                    
+        }
+                    }
+                }
+            
+
     
 
 
