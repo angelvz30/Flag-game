@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
-
+struct GameView: View {
 struct ContentView: View {
     var body: some View {
         @State var showingInstructions = false
         @State var score = 0
         NavigationStack{
-            }
             ZStack {
                 Image("earth-background")
                     .resizable()
@@ -32,21 +31,24 @@ struct ContentView: View {
                 }
                 
             }
-            
+            NavigationStack{
+                
             Button("Play") {
-                
-                
-                
-            }
-            Button("Instructions"){
-                showingInstructions = true
-                    NavigationLink(destination: showingInstructions) {
-                            Text("Here is how to play")
+                NavigationLink(destination:GameView()) {
+                    Text("Play")
+                        .font(.title)
+                        .padding()
+                        
                 }
+                
             }
         }
     }
     
+           
+                        
+                    }
+                }
     
     
     
@@ -54,3 +56,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+                }
