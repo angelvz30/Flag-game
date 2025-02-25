@@ -1,0 +1,42 @@
+//
+//  GameView.swift
+//  Flag game
+//
+//  Created by QHS on 2/18/25.
+//
+
+import SwiftUI
+
+struct GameView: View {
+    @State var showingScore = false
+    @State var showingResults = false
+    @State var flagCountries = allCountries.shuffled()
+    @State var correctAnswerCount = 0
+    @State var score: Int = 0
+    @State var selectedFlag = -1
+    
+    static let allCountries = ["Brazil", "Japan", "Denmark", "Morocco", "Italy", "Serbia", "China", "France", "Guernsey", "Togo", "Canada"]
+    
+    var body: some View {
+        ZStack {
+            RadialGradient(stops: [
+                .init(color: Color(red: 0.1, green: 0.2, blue: 0.45),location: 0.3),
+                .init(color: Color(red: 0.76, green: 0.15, blue: 0.26),location: 0.3),
+            ], center: .top, startRadius: 200, endRadius: 400)
+                .ignoresSafeArea()
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                Text("GUESS THE CORRECT FLAG")
+                
+            }
+        }
+    }
+    
+        
+    }
+    
+    #Preview {
+        GameView()
+    }
+
