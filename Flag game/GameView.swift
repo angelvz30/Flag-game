@@ -18,23 +18,31 @@ struct GameView: View {
     static let allCountries = ["Brazil", "Japan", "Denmark", "Morocco", "Italy", "Serbia", "China", "France", "Guernsey", "Togo", "Canada"]
     
     var body: some View {
-        ZStack {
-            RadialGradient(stops: [
-                .init(color: Color(red: 0.1, green: 0.2, blue: 0.45),location: 0.3),
-                .init(color: Color(red: 0.76, green: 0.15, blue: 0.26),location: 0.3),
-            ], center: .top, startRadius: 200, endRadius: 400)
-                .ignoresSafeArea()
-                .ignoresSafeArea()
+       // ZStack {
+            //RadialGradient(stops: [
+                //.init(color: Color(red: 0.1, green: 0.2, blue: 0.45),location: 0.3),
+               // .init(color: Color(red: 0.76, green: 0.15, blue: 0.26),location: 0.3),
+          //  ], center: .top, startRadius: 100, endRadius: 200)
+              //  .ignoresSafeArea()
+            //    .ignoresSafeArea()
             VStack {
                 Spacer()
                 Text("GUESS THE CORRECT FLAG")
+                        .font(.largeTitle.weight(.bold))
+                        .foregroundColor(.black)
+            VStack(spacing: 15) {
+                VStack {
+                        Text("Click on the flag")
+                        .foregroundStyle(.secondary)
+                }
+                }
                 
             }
         }
     }
     
         
-    }
+   // }
     
     #Preview {
         GameView()

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct GameView: View {
+
 struct ContentView: View {
     var body: some View {
         @State var showingInstructions = false
@@ -31,29 +31,28 @@ struct ContentView: View {
                 }
                 
             }
-            NavigationStack{
-                
-            Button("Play") {
+            NavigationStack {
                 NavigationLink(destination:GameView()) {
                     Text("Play")
                         .font(.title)
                         .padding()
-                        
+                    
                 }
+                
                 
             }
         }
+        
+        
+        
     }
     
-           
-                        
-                    }
-                }
     
     
+    
+}
+#Preview {
+        ContentView()
+    }
     
 
-#Preview {
-    ContentView()
-}
-                }
