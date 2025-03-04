@@ -13,6 +13,7 @@ struct GameView: View {
     @State var flagCountries = allCountries.shuffled()
     @State var correctAnswerCount = 0
     @State var score: Int = 0
+    @State var correctAnswer = Int.random(in: 0...2)
     @State var selectedFlag = -1
     
     static let allCountries = ["Brazil", "Japan", "Denmark", "Morocco", "Italy", "Serbia", "China", "France", "Guernsey", "Togo", "Canada"]
@@ -20,11 +21,10 @@ struct GameView: View {
     var body: some View {
         ZStack {
             RadialGradient(stops: [
-                .init(color: Color(red: 0.9, green: 0.5, blue: 0.20),location: 0.3),
                 .init(color: Color(red: 0.9, green: 0.74, blue: 0.26),location: 0.3),
-            ], center: .top, startRadius: 100, endRadius: 200)
+            ], center: .top, startRadius: 100, endRadius: -100)
                 .ignoresSafeArea()
-                .ignoresSafeArea()
+                
             VStack {
                 Spacer()
                 Text("GUESS THE CORRECT FLAG")
@@ -34,6 +34,29 @@ struct GameView: View {
                 VStack {
                         Text("Click on the flag")
                         .foregroundStyle(.secondary)
+                    Text(flagCountries[correctAnswer])
+                        
+                ForEach(0..<3) { number in
+                    Button {
+                        selectedFlag(number)
+                    } label: {
+                        Images(name: flagCountries[number])
+                            .rotation3DEffect(.degrees(self.selectedFlag == index ? 360 : 0), axis: (x: 0, y: 1, z: 0))
+                            .animation(.linear(duration: 0.2))
+                            .opacity(selectedFlag == -1 || selectedFlag != index ? 1 : 0)
+                            .saturation(selectedFlag == -1 || selectedFlag != index ? 1 : 0)
+                            
+                    }
+                            if index == self.correctAnswer {
+                                self.correctAnswerCount += 1
+                            }
+                            self.selectedFlag = index
+                } {
+                            Image(self.flagCountries[index])
+                                .renderingMode(.original)
+                                .clipShape(Capsule())
+                        }
+                    
                     }
                         }
                     }
