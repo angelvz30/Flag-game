@@ -1,4 +1,4 @@
-//
+
 //  Flag_gameApp.swift
 //  Flag game
 //
@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-
 @main
 struct Flag_gameApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //GameView()
         }
     }
 }
